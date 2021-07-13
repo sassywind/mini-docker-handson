@@ -1,3 +1,7 @@
+""" Lesson1: 子プロセスを立ち上げてみよう
+$ ./mini-docker run
+"""
+
 import linux
 
 def pre_exec(arg1: str, arg2: int):
