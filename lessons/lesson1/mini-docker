@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+
+import click
+
+from run import exec_run
+
+@click.group()
+def cli():
+    pass
+
+@click.command(context_settings={'ignore_unknown_options': True})
+def run():
+    exec_run()
+
+cli.add_command(run)
+
+if __name__ == '__main__':
+    cli()
