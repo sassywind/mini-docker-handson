@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+
+import click
+
+from run import exec_run
+
+@click.group()
+def cli():
+    pass
+
+@click.command(context_settings={'ignore_unknown_options': True})
+@click.option('--cpus', help='Number of CPUs', default=None, type=int)
+@click.argument('command', required=True, nargs=-1)
+def run(cpus, command):
+    exec_run(cpus, command)
+
+cli.add_command(run)
+
+if __name__ == '__main__':
+    cli()
