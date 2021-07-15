@@ -9,7 +9,7 @@ def cli():
     pass
 
 @click.command(context_settings={'ignore_unknown_options': True})
-@click.option('--cpus', help='Number of CPUs', default=None, type=int)
+@click.option('--cpus', help='Number of CPUs', default=None, type=float)
 @click.argument('command', required=True, nargs=-1)
 def run(cpus, command):
     exec_run(cpus, command)
